@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="/assets/logo_white_cropped.png"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/b1e4efcbad.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <nav
+      class="navbar navbar-expand-lg bg-body-tertiary bg-primary"
+      data-bs-theme="dark"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"
+          >
+          Weather Forecast</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2 light"
+              type="search"
+              placeholder="Search City"
+              aria-label="Search"
+              id="city"
+            />
+            <button class="btn btn-light" type="submit" id="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+   
+    <div class="container">
+      <h2 class="my-4 text-center">Weather for <span id="cityName"></span></h2>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
+            <div class="card-header py-3 border-white">
+              <h4 class="my-0 fw-normal">Tempretures</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                <span id="temp"></span><small>°C</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Min Temperature is <span id="min_temp"></span></li>
+                <li>Max Temperature is <span id="max_temp"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
+            <div class="card-header py-3 border-white">
+              <h4 class="my-0 fw-normal">Country Info</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                <span id="country"></span>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Sunrise is <span id="sunrise"></span></li>
+                <li>Sunset is <span id="sunset"></span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm bg-dark text-white">
+            <div class="card-header py-3 border-white">
+              <h4 class="my-0 fw-normal">Weather Info</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                <span id="main"></span>
+                <span class="weather-icon"><img src="" /></span>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Status is <span id="description"></span></li>
+                <li>Wind is <span id="wind"></span>° Degree </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="display-6 text-center mb-4">Weather</h2>
+
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th style="width: 10%"></th>
+              <th style="width: 10%">Tempreture</th>
+              <th style="width: 10%">Max Temp</th>
+              <th style="width: 10%">Min Temp</th>
+              <th style="width: 10%">Feels Like</th>
+              <th style="width: 10%">longitude</th>
+              <th style="width: 10%">latitude</th>
+              <th style="width: 10%">Sunrise</th>
+              <th style="width: 10%">Sunset</th>
+              <th style="width: 6%">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">Shanghai</th>
+              <td><span id="ShanghaiName"></span></td>
+              <td><span id="ShanghaiMax"></span></td>
+              <td><span id="ShanghaiMin"></span></td>
+              <td><span id="ShanghaiFeels"></span></td>
+              <td><span id="Shanghailon"></span></td>
+              <td><span id="Shanghailat"></span></td>
+              <td><span id="ShanghaiSunrise"></span></td>
+              <td><span id="ShanghaiSunset"></span></td>
+              <td><span id="ShanghaiIcon" class="weatherIcon"></span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Boston</th>
+              <td><span id="BostonName"></span></td>
+              <td><span id="BostonMax"></span></td>
+              <td><span id="BostonMin"></span></td>
+              <td><span id="BostonFeels"></span></td>
+              <td><span id="Bostonlon"></span></td>
+              <td><span id="Bostonlat"></span></td>
+              <td><span id="BostonSunrise"></span></td>
+              <td><span id="BostonSunset"></span></td>
+              <td><span id="BostonIcon" class="weatherIcon"></span></td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">Lucknow</th>
+              <td><span id="LucknowName"></span></td>
+              <td><span id="LucknowMax"></span></td>
+              <td><span id="LucknowMin"></span></td>
+              <td><span id="LucknowFeels"></span></td>
+              <td><span id="Lucknowlon"></span></td>
+              <td><span id="Lucknowlat"></span></td>
+              <td><span id="LucknowSunrise"></span></td>
+              <td><span id="LucknowSunset"></span></td>
+              <td><span id="LucknowIcon" class="weatherIcon"></span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Kolkata</th>
+              <td><span id="KolkataName"></span></td>
+              <td><span id="KolkataMax"></span></td>
+              <td><span id="KolkataMin"></span></td>
+              <td><span id="KolkataFeels"></span></td>
+              <td><span id="Kolkatalon"></span></td>
+              <td><span id="Kolkatalat"></span></td>
+              <td><span id="KolkataSunrise"></span></td>
+              <td><span id="KolkataSunset"></span></td>
+              <td><span id="KolkataIcon" class="weatherIcon"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
